@@ -40,7 +40,7 @@ class CaroGame:
             "vi": {
                 "title": "CỜ CARO ",
                 "author": "Tác giả: Bùi Nguyên Anh Tuấn - học sinh IT",
-                "language": "Ngôn ngữ:",
+                "language": ":", 
                 "mode": "Chế độ:",
                 "pvp": "2 Người chơi",
                 "pve": "Chơi với máy",
@@ -76,7 +76,7 @@ class CaroGame:
             "en": {
                 "title": "CARO CHESS",
                 "author": "Author:bui Ngyen Anh Tuan - Student of IT",
-                "language": "Language:",
+                "language": ":",
                 "mode": "Mode:",
                 "pvp": "2 Players",
                 "pve": "vs Computer",
