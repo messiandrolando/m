@@ -38,7 +38,8 @@ class CaroGame:
     def load_language_resources(self):
         self.lang = {
             "vi": {
-                "title": "CỜ CARO bởi Anh Tuấn",
+                "title": "CỜ CARO ",
+                "author": "Tác giả: Bùi Nguyên Anh Tuấn - học sinh IT",
                 "language": "Ngôn ngữ:",
                 "mode": "Chế độ:",
                 "pvp": "2 Người chơi",
@@ -73,7 +74,8 @@ class CaroGame:
                 "exit_title": "Xác nhận thoát"
             },
             "en": {
-                "title": "CARO CHESS by Anh Tuan",
+                "title": "CARO CHESS",
+                "author": "Author:bui Ngyen Anh Tuan - Student of IT",
                 "language": "Language:",
                 "mode": "Mode:",
                 "pvp": "2 Players",
@@ -129,6 +131,15 @@ class CaroGame:
             bg=self.colors["background"]
         )
         self.title_label.pack(pady=10)
+
+        # Author
+        self.author_label = tk.Label(
+            self.root,
+            font=("Arial", 10),
+            fg="#7f8c8d",
+            bg=self.colors["background"]
+        )
+        self.author_label.pack(pady=2)
 
         # Game mode
         self.mode_frame = tk.Frame(self.root, bg=self.colors["background"])
@@ -239,7 +250,7 @@ class CaroGame:
 
         self.quit_btn = tk.Button(
             control_frame,
-            command=self.confirm_exit,  # Đã sửa thành confirm_exit
+            command=self.confirm_exit,
             bg="#e74c3c",
             fg="white"
         )
@@ -254,6 +265,7 @@ class CaroGame:
         lang = self.lang[self.language.get()]
         self.root.title(lang["title"])
         self.title_label.config(text=lang["title"])
+        self.author_label.config(text=lang["author"])
         
         # Update mode section
         self.mode_label.config(text=lang["mode"])
@@ -290,7 +302,7 @@ class CaroGame:
         self.score_title.config(text=lang["score_title"])
         self.score_X_label.config(text=f"{lang['player_X']} {self.scores['X']}")
         self.score_O_label.config(text=f"{lang['player_O']} {self.scores['O']}")
-        self.draw_label.config(text=f"{lang['draws']} {self.scores['draw']}")
+        self.draw_label.config(text=f"{lang['draws']} {self.scores['draw']}")                                                        
 
     def make_move(self, row, col):
         if self.board[row][col] != "" or self.check_winner()[0]:
@@ -319,8 +331,7 @@ class CaroGame:
         self.switch_player()
         
         if self.vs_computer.get() and self.current_player == "O":
-            self.root.after(500, self.computer_move())
-
+            self.root.after(500, self.computer_move)
 
     def computer_move(self):
         difficulty = self.difficulty.get()
@@ -417,5 +428,5 @@ class CaroGame:
 if __name__ == "__main__":
     root = tk.Tk()
     game = CaroGame(root)
-    root.protocol("WM_DELETE_WINDOW", game.confirm_exit)  # Thêm dòng này
+    root.protocol("WM_DELETE_WINDOW", game.confirm_exit)  
     root.mainloop()
