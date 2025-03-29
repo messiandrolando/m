@@ -39,7 +39,7 @@ class CaroGame:
         self.lang = {
             "vi": {
                 "title": "CỜ CARO ",
-                "author": "Tác giả: Bùi Nguyên Anh Tuấn - học sinh IT",
+                "author": "Tác giả: Bùi Nguyên Anh Tuấn - học sinh FPT",
                 "language": ":", 
                 "mode": "Chế độ:",
                 "pvp": "2 Người chơi",
@@ -75,7 +75,7 @@ class CaroGame:
             },
             "en": {
                 "title": "CARO CHESS",
-                "author": "Author:bui Ngyen Anh Tuan - Student of IT",
+                "author": "Author:bui Ngyen Anh Tuan - Student of FPT",
                 "language": ":",
                 "mode": "Mode:",
                 "pvp": "2 Players",
