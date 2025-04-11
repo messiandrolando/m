@@ -424,7 +424,6 @@ class CaroGame:
         self.scores = {"X": 0, "O": 0, "draw": 0}
         self.update_ui()
 
-
 if __name__ == "__main__":
     root = tk.Tk()
     game = CaroGame(root)
